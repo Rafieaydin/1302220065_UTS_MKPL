@@ -19,6 +19,7 @@ public class Employee {
 	}
 	
 	public int getAnnualIncomeTax() {
-		return TaxFunction.calculateTax(salary.getMonthlySalary(), salary.getOtherMonthlyIncome(), JoinDate.monthWorkingInYear(), salary.getAnnualDeductible(), family.getSpouseIdNumber().equals(""), family.getNumberOfChildren());
+                TaxParameter pram =  new TaxParameter(salary.getMonthlySalary(), salary.getOtherMonthlyIncome(), JoinDate.monthWorkingInYear(), salary.getAnnualDeductible(), family.getSpouseIdNumber().equals(""), family.getNumberOfChildren());
+		return TaxFunction.calculateTax(pram);
 	}
 }
